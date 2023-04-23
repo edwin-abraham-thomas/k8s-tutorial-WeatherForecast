@@ -1,0 +1,5 @@
+docker build -f WeatherForecast/Dockerfile . -t edwinatdev/weatherforecast:latest
+
+docker push edwinatdev/weatherforecast:latest
+
+pause
