@@ -6,7 +6,7 @@
     <ProjectGuid>f381dcf6-7cf5-459c-882d-1a089e6cf039</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>weatherforecast</DockerServiceName>
+    <DockerServiceName>weatherforecastproxy</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">

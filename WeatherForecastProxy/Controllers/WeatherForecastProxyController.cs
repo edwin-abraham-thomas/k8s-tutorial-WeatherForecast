@@ -15,7 +15,7 @@ namespace WeatherForecastProxy.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public async Task<string> Get()
         {
-            var weatherForecastServiceURL = "http://weatherforecast:5580/WeatherForecast";
+            var weatherForecastServiceURL = "http://weatherforecast/WeatherForecast";
             using HttpClient client = new();
             _logger.LogInformation("Requesting weather forecast {url}", weatherForecastServiceURL);
             var response = await client.GetAsync(weatherForecastServiceURL);
