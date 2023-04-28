@@ -15,6 +15,6 @@ services:
     build:
       context: .
       dockerfile: WeatherForecast/Dockerfile
-    ports:
-      - "5580:80"
+    #ports:
+    #  - "5580:80" #Uncomment this port mapping to hit the service directly
     #  - "55443:443"
