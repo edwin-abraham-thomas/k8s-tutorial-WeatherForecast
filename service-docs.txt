@@ -1,2 +1,0 @@
-proxy: https://localhost:54443/swagger/index.html
-	http://localhost:5480/swagger/index.html
