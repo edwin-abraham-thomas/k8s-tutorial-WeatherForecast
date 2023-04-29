@@ -7,14 +7,14 @@ services:
       context: .
       dockerfile: WeatherForecastProxy/Dockerfile
     ports:
-      #- "5480:80"
-      - "54443:443"
+      - "5480:80"
+      #- "54443:443"
 
   weatherforecast:
     image: ${DOCKER_REGISTRY-}weatherforecast
     build:
       context: .
       dockerfile: WeatherForecast/Dockerfile
-    #ports:
-    #  - "5580:80" #Uncomment this port mapping to hit the service directly
+    ports:
+      - "5580:80" #Uncomment this port mapping to hit the service directly
     #  - "55443:443"

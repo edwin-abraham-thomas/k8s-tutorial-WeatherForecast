@@ -1,3 +1,10 @@
 docker-compose:
-    proxy-url: https://localhost:54443/swagger/index.html    
-    api-url: http://localhost:5580/swagger/index.html
+    weatherforecastproxy-urls: 
+        - swagger: https://localhost:54443/swagger/index.html
+        - weatherforecastproxy: http://localhost:5480/weatherforecastproxy
+    weatherforecast-url: 
+        - swagger: http://localhost:5580/swagger/index.html
+        - weatherforecast: http://localhost:5580/weatherforecast
+  
+kubernetes:
+    api-service-url:
