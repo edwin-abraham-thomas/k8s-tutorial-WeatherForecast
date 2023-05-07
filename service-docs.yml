@@ -7,4 +7,4 @@ docker-compose:
         - weatherforecast: http://localhost:5580/weatherforecast
   
 kubernetes:
-    api-service-url:
+    api-service-url: http://localhost:30007/weatherforecast

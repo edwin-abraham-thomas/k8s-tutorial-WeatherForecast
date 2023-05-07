@@ -8,43 +8,37 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      service: weatherforecastapi
+      app: weather-forecast
   template:
     metadata:
       labels:
         app: weather-forecast
-        service: weatherforecastapi
     spec:
       containers:
         - name: weatherforecast
           image: edwinatdev/weatherforecast:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: 5000
               protocol: TCP
           env:
             - name: ASPNETCORE_URLS
-              value: http://+:80
+              value: http://*:5000
             - name: ASPNETCORE_ENVIRONMENT
               value: Production
           resources:
             limits:
-              cpu: "0.5"
-              memory: "512Mi"
+              cpu: "0.4"
+              memory: "125Mi"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: webapi-service
-  labels:
-    app: weather-forecast
-    service: weatherforecastapi
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
-    - port: 80
-      # targetPort: 80
-      protocol: TCP
-      nodePort: 30007
+    - port: 30007
+      targetPort: 5000
   selector:
-    service: weatherforecastapi
+    app: weather-forecast
