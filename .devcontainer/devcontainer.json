@@ -22,6 +22,16 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "dotnet restore",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"ms-dotnettools.csharp",
+				"ms-azuretools.vscode-docker",
+				"redhat.vscode-yaml"
+			]
+		}
+	}
 
 	// Configure tool-specific properties.
 	// "customizations": {},
